@@ -86,11 +86,12 @@ Lake1 Oeschinen lies at the foot of the Blüemlisalp in the Bernese Alps. Situat
       backgroundColor: Colors.transparent,
     );
 
-    RaisedButton btn = new RaisedButton(
+    ElevatedButton btn = new ElevatedButton(
         onPressed: () {
           Navigator.of(context).pushNamed('Pavlova');
         },
-        color: Colors.green,
+        style: ButtonStyle(
+            backgroundColor: MaterialStateProperty.all(Colors.green)),
         child: new Text('go to Pavlova',
             style: new TextStyle(color: Colors.white)));
     return Scaffold(

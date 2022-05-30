@@ -15,7 +15,7 @@ class SearchPage extends StatelessWidget {
         title: Text('搜索'),
       ),
       body: Container(
-        child: RaisedButton(
+        child: ElevatedButton(
             onPressed: () {
               showSearch(context: context, delegate: SearchBarDelegate());
             },

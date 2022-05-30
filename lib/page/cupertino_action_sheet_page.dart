@@ -19,7 +19,7 @@ class _CupertinoActionSheetPAGEState extends State<CupertinoActionSheetPage> {
         title: Text('CupertinoActionSheet'),
       ),
       body: Container(
-        child: RaisedButton(
+        child: ElevatedButton(
           onPressed: _showCupertinoActionSheet,
           child: Text('show'),
         ),

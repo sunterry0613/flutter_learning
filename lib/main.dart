@@ -15,22 +15,22 @@ bool get isInDebugMode {
 }
 
 /// Reports [error] along with its [stackTrace] to Sentry.io.
-Future<Null> _reportError(dynamic error, dynamic stackTrace) async {
-  print('-Caught error: $error');
-
-  // Errors thrown in development mode are unlikely to be interesting. You can
-  // check if you are running in dev mode using an assertion and omit sending
-  // the report.
-  if (isInDebugMode) {
-    print(stackTrace);
-    print('In dev mode. Not sending report to Sentry.io.');
-    return;
-  }
-
-  print('Reporting to Sentry.io...');
-
-  print('Success! Event ID:  ');
-}
+// Future<Null> _reportError(dynamic error, dynamic stackTrace) async {
+//   print('-Caught error: $error');
+//
+//   // Errors thrown in development mode are unlikely to be interesting. You can
+//   // check if you are running in dev mode using an assertion and omit sending
+//   // the report.
+//   if (isInDebugMode) {
+//     print(stackTrace);
+//     print('In dev mode. Not sending report to Sentry.io.');
+//     return;
+//   }
+//
+//   print('Reporting to Sentry.io...');
+//
+//   print('Success! Event ID:  ');
+// }
 
 Future<Null> main() async {
   WidgetsFlutterBinding.ensureInitialized();

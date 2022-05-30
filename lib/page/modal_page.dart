@@ -18,7 +18,7 @@ class _ModalPageState extends State<ModalPage> {
       ),
       body: Column(
         children: [
-          RaisedButton(
+          ElevatedButton(
             child: Text('show bottom sheet'),
             onPressed: _showBottom,
           )
@@ -40,7 +40,7 @@ class _ModalPageState extends State<ModalPage> {
         child: Column(
           children: [
             Text('top'),
-            RaisedButton(
+            ElevatedButton(
               child: Text('pop pop'),
               onPressed: () {
                 Navigator.of(context).pop('pop');

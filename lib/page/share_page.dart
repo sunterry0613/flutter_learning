@@ -38,7 +38,7 @@ class _SharePageState extends State<SharePage> {
               gaplessPlayback: true,
             ),
             SizedBox(height: 30),
-            RaisedButton(
+            ElevatedButton(
               child: Text('share to twitter'),
               onPressed: () async {
 //                var response = await FlutterShareMe().shareToTwitter(
@@ -48,21 +48,21 @@ class _SharePageState extends State<SharePage> {
 //                }
               },
             ),
-            RaisedButton(
+            ElevatedButton(
               child: Text('share to shareWhatsApp'),
               onPressed: () {
 //                FlutterShareMe()
 //                    .shareToWhatsApp(base64Image: base64Image, msg: msg);
               },
             ),
-            RaisedButton(
+            ElevatedButton(
               child: Text('share to shareFacebook'),
               onPressed: () {
 //                FlutterShareMe().shareToFacebook(
 //                    url: 'https://github.com/lizhuoyuan', msg: msg);
               },
             ),
-            RaisedButton(
+            ElevatedButton(
               child: Text('share to System'),
               onPressed: () async {
 //                var response = await FlutterShareMe().shareToSystem(msg: msg);

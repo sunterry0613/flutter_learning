@@ -9,4 +9,3 @@ void main() {
   String s = a.substring(a.length - 3);
   print(s);
 }
-

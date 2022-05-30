@@ -17,7 +17,7 @@ class FractionallySizedBoxPage extends StatelessWidget {
                 alignment: Alignment.bottomRight,
                 heightFactor: 0.5,
                 widthFactor: 0.5,
-                child: RaisedButton(
+                child: ElevatedButton(
                   onPressed: () {
                     print('hhh');
                   },

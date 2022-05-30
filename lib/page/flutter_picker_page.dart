@@ -28,12 +28,12 @@ class _PickerPageState extends State<PickerPage> {
           children: <Widget>[
             (stateText != null) ? Text(stateText) : Container(),
             SizedBox(height: listSpec),
-            RaisedButton(
+            ElevatedButton(
               child: Text('Picker Show Modal'),
               onPressed: showPickerModal,
             ),
             SizedBox(height: listSpec),
-            RaisedButton(
+            ElevatedButton(
               child: Text('Picker Show Datetime (Round background)'),
               onPressed: showPickerDateTimeRoundBg,
             ),

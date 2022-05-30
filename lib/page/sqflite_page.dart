@@ -29,11 +29,11 @@ class _SqfLiteState extends State<SqfLite> {
           children: <Widget>[
             ButtonBar(
               children: <Widget>[
-                RaisedButton(
+                ElevatedButton(
                   onPressed: _insertData,
                   child: Text('存储数据'),
                 ),
-                RaisedButton(
+                ElevatedButton(
                   onPressed: getNotes,
                   child: Text('点一次取2条数据'),
                 ),
