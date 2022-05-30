@@ -5,7 +5,7 @@
  */
 
 import 'package:flutter/material.dart';
-import 'package:url_launcher/url_launcher.dart';
+import 'package:url_launcher/url_launcher_string.dart';
 
 class AliveHomePage extends StatefulWidget {
   AliveHomePage({Key key, this.title}) : super(key: key);
@@ -27,8 +27,8 @@ class _MyHomePageState extends State<AliveHomePage>
     const text = 'Juno：您身邊的星座專家，占星、塔羅、合盤全都有！$OFFICIAL_WEBSITE';
 
     String url = "whatsapp://send?text=$text";
-    if (await canLaunch(url)) {
-      await launch(url);
+    if (await canLaunchUrlString(url)) {
+      await launchUrlString(url);
     } else {
       print('Could not launch $url');
     }

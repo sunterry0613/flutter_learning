@@ -9,7 +9,7 @@ import 'package:dio/dio.dart';
 class HttpUtil {
   static HttpUtil instance;
   Dio dio;
-  Options options;
+  BaseOptions options;
 
   static HttpUtil getInstance() {
     print('getInstance');
@@ -22,7 +22,7 @@ class HttpUtil {
   HttpUtil() {
     print('dio赋值');
     // 或者通过传递一个 `options`来创建dio实例
-    options = Options(
+    options = BaseOptions(
       // 请求基地址,可以包含子路径，如: "https://www.google.com/api/".
       baseUrl: "https://www.xx.com/api",
       //连接服务器超时时间，单位是毫秒.
@@ -43,7 +43,7 @@ class HttpUtil {
     try {
       response = await dio.get(
         url,
-        data: data,
+        queryParameters: data,
         cancelToken: cancelToken,
       );
       print('get请求成功!response.data：${response.data}');

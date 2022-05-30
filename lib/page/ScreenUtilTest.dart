@@ -100,7 +100,7 @@ class _MyHomePageState extends State<ScreenUtilTest> {
                   '我的文字大小在设计稿上是16dp，会随着系统的文字缩放比例变化',
                   style: TextStyle(
                     color: Colors.black,
-                    fontSize: 16.ssp,
+                    fontSize: 16.sp,
                   ),
                 ),
               ],

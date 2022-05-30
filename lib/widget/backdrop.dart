@@ -154,7 +154,7 @@ class _BackdropState extends State<Backdrop>
               clipper: new ShapeBorderClipper(
                 shape: new BeveledRectangleBorder(
                   borderRadius:
-                      _kFrontHeadingBevelRadius.lerp(_controller.value),
+                      _kFrontHeadingBevelRadius.transform(_controller.value),
                 ),
               ),
               clipBehavior: Clip.antiAlias,

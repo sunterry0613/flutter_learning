@@ -173,19 +173,20 @@ class StaggerAnimation extends StatelessWidget {
 
   Widget _buildAni(BuildContext context, Widget child) {
     //高度动画
-    Animation<double> _height = Tween(begin: 0.0, end: 300.0).animate(CurvedAnimation(
-        parent: controller, curve: Interval(0.0, 0.6, curve: Curves.ease)));
+    Animation<double> _height = Tween(begin: 0.0, end: 300.0).animate(
+        CurvedAnimation(
+            parent: controller, curve: Interval(0.0, 0.6, curve: Curves.ease)));
 
     //颜色
-    Animation<Color> _color = ColorTween(begin: Colors.red, end: Colors.green).animate(
-        CurvedAnimation(
+    Animation<Color> _color = ColorTween(begin: Colors.red, end: Colors.green)
+        .animate(CurvedAnimation(
             parent: controller, curve: Interval(0.0, 0.6, curve: Curves.ease)));
 
     //左侧间距
     Animation<EdgeInsets> _padding = Tween(
-        begin: EdgeInsets.only(left: 0.0), end: EdgeInsets.only(left: 300))
+            begin: EdgeInsets.only(left: 0.0), end: EdgeInsets.only(left: 300))
         .animate(CurvedAnimation(
-        parent: controller, curve: Interval(0.6, 1.0, curve: Curves.ease)));
+            parent: controller, curve: Interval(0.6, 1.0, curve: Curves.ease)));
 
     return Container(
       alignment: Alignment.bottomLeft,

@@ -1,6 +1,6 @@
 import 'package:appcheck/appcheck.dart';
 import 'package:flutter/material.dart';
-import 'package:url_launcher/url_launcher.dart';
+import 'package:url_launcher/url_launcher_string.dart';
 
 class GridViewPage extends StatefulWidget {
   @override
@@ -104,8 +104,8 @@ class ListItemWidget extends StatelessWidget {
 
         var url = 'https://www.instagram.com/juno.horoscopes/';
 
-        if (await canLaunch(url)) {
-          await launch(url);
+        if (await canLaunchUrlString(url)) {
+          await launchUrlString(url);
         } else {
           throw 'There was a problem to open the url: $url';
         }

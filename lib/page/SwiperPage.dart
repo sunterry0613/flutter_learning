@@ -6,7 +6,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_swiper/flutter_swiper.dart';
-import 'package:url_launcher/url_launcher.dart';
+import 'package:url_launcher/url_launcher_string.dart';
 
 class SwiperPage extends StatefulWidget {
   @override
@@ -50,8 +50,8 @@ class SwiperPageState extends State<SwiperPage> {
 
   void _goOtherApp(int index) async {
     const url = 'flutter://li.zhuoyuan'; //这个url就是由scheme和host组成的 ：scheme://host
-    if (await canLaunch(url)) {
-      await launch(url);
+    if (await canLaunchUrlString(url)) {
+      await launchUrlString(url);
     } else {
       throw 'Could not launch $url';
     }
