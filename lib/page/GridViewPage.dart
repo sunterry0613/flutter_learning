@@ -1,6 +1,5 @@
+import 'package:appcheck/appcheck.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_app/page/MyHomePage.dart';
-import 'package:flutter_appavailability/flutter_appavailability.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class GridViewPage extends StatefulWidget {
@@ -67,7 +66,8 @@ class ListItemWidget extends StatelessWidget {
             Hero(
                 tag: listItem.title,
                 child: Image(
-                  image: AssetImage(index == 5 ? 'images/jay.jpg' : 'images/pic3.jpg'),
+                  image: AssetImage(
+                      index == 5 ? 'images/jay.jpg' : 'images/pic3.jpg'),
                   width: 150.0,
                   height: 150.0,
                   fit: BoxFit.fill,
@@ -92,11 +92,11 @@ class ListItemWidget extends StatelessWidget {
           return MyHomePage(tag: listItem.title);
         }));*/
 
-        print(await AppAvailability.checkAvailability("com.whatsapp"));
+        print(await AppCheck.checkAvailability("com.whatsapp"));
 
-        print(await AppAvailability.checkAvailability("com.facebook.katana"));
-        print(await AppAvailability.checkAvailability("com.twitter.android"));
-        print(await AppAvailability.checkAvailability("com.instagram.android"));
+        print(await AppCheck.checkAvailability("com.facebook.katana"));
+        print(await AppCheck.checkAvailability("com.twitter.android"));
+        print(await AppCheck.checkAvailability("com.instagram.android"));
 
 //         print(await canLaunch(FB_PAGE));
 
@@ -113,7 +113,8 @@ class ListItemWidget extends StatelessWidget {
       },
     );
   }
-   static const String FACEBOOK_URL =
+
+  static const String FACEBOOK_URL =
       'https://www.facebook.com/%E6%B5%8B%E6%B5%8B%E5%9B%BD%E9%99%85%E7%89%88-617960732190357';
   static const String FB_PAGE = 'fb://page/617960732190357';
 }

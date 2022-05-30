@@ -185,7 +185,7 @@ class _BackAppBar extends StatelessWidget {
     return IconTheme.merge(
         data: theme.primaryIconTheme,
         child: new DefaultTextStyle(
-          style: theme.primaryTextTheme.title,
+          style: theme.primaryTextTheme.titleMedium,
           child: Container(
               padding: const EdgeInsets.only(top: 20.0),
               child: Row(children: children),

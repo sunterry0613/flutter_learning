@@ -26,7 +26,7 @@ class _FlutterNativeWebPageState extends State<FlutterNativeWebPage> {
         title: Text('flutterwebview'),
       ),
       body: Container(
-          height:300,
+          height: 300,
           width: ScreenUtil().screenWidth,
           child: WebView(
             initialUrl: 'https://www.youtube.com/watch?v=GWqwOOg6IUE',

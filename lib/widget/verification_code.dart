@@ -4,8 +4,9 @@
  *
  */
 
-import 'package:flutter/material.dart';
 import 'dart:ui' as ui;
+
+import 'package:flutter/material.dart';
 import 'package:path_drawing/path_drawing.dart';
 
 class DottedLineUnderlineInputBorder extends UnderlineInputBorder {

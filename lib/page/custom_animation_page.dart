@@ -14,7 +14,8 @@ class CustomAnimationPage extends StatefulWidget {
   State<StatefulWidget> createState() => CustomAnimationPageState();
 }
 
-class CustomAnimationPageState extends State<CustomAnimationPage> with SingleTickerProviderStateMixin {
+class CustomAnimationPageState extends State<CustomAnimationPage>
+    with SingleTickerProviderStateMixin {
   Animation<double> _doubleAnimation;
   AnimationController _controller;
   CurvedAnimation curvedAnimation;
@@ -24,8 +25,10 @@ class CustomAnimationPageState extends State<CustomAnimationPage> with SingleTic
   @override
   void initState() {
     super.initState();
-    _controller = AnimationController(vsync: this, duration: Duration(seconds: 2));
-    curvedAnimation = CurvedAnimation(parent: _controller, curve: Curves.decelerate);
+    _controller =
+        AnimationController(vsync: this, duration: Duration(seconds: 2));
+    curvedAnimation =
+        CurvedAnimation(parent: _controller, curve: Curves.decelerate);
     _doubleAnimation = Tween(begin: 0.0, end: 360.0).animate(_controller);
 
     _progressAnimation = Tween(begin: 0.0, end: 0.6).animate(_controller);
@@ -56,7 +59,9 @@ class CustomAnimationPageState extends State<CustomAnimationPage> with SingleTic
               height: 100.0,
               margin: EdgeInsets.all(8.0),
               child: CustomPaint(
-                  child: Center(child: Text((_doubleAnimation.value / 3.6).round().toString())),
+                  child: Center(
+                      child: Text(
+                          (_doubleAnimation.value / 3.6).round().toString())),
                   painter: CircleProgressBarPainter(_doubleAnimation.value)),
             ),
             Container(
@@ -351,7 +356,8 @@ class CircleProgressBarPainter extends CustomPainter {
 
   @override
   void paint(Canvas canvas, Size size) {
-    canvas.drawCircle(Offset(size.width / 2, size.height / 2), size.width / 2, _paintBackground);
+    canvas.drawCircle(Offset(size.width / 2, size.height / 2), size.width / 2,
+        _paintBackground);
     Rect rect = Rect.fromCircle(
       center: Offset(size.width / 2, size.height / 2),
       radius: size.width / 2,

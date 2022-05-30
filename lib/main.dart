@@ -73,22 +73,23 @@ class MyApp extends StatelessWidget {
     return ScreenUtilInit(
         allowFontScaling: false,
         designSize: Size(360, 720),
-        child: MaterialApp(
-          title: 'Welcome to Flutter_study',
-          theme: snapshot.data ? AppTheme().darkTheme : AppTheme().lightTheme,
-          localizationsDelegates: [
-            const TranslationsDelegate(),
-            GlobalMaterialLocalizations.delegate,
-            GlobalWidgetsLocalizations.delegate,
-          ],
-          supportedLocales: [Locale("zh"), Locale("en")],
-          initialRoute: '/',
-          routes: routes,
-          onGenerateRoute: onGenerateRoute,
-          navigatorObservers: [
-            Ob1(),
-          ],
-        ));
+        builder: () => MaterialApp(
+              title: 'Welcome to Flutter_learning',
+              theme:
+                  snapshot.data ? AppTheme().darkTheme : AppTheme().lightTheme,
+              localizationsDelegates: [
+                const TranslationsDelegate(),
+                GlobalMaterialLocalizations.delegate,
+                GlobalWidgetsLocalizations.delegate,
+              ],
+              supportedLocales: [Locale("zh"), Locale("en")],
+              initialRoute: '/',
+              routes: routes,
+              onGenerateRoute: onGenerateRoute,
+              navigatorObservers: [
+                Ob1(),
+              ],
+            ));
   }
 }
 

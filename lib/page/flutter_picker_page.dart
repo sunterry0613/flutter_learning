@@ -46,7 +46,8 @@ class _PickerPageState extends State<PickerPage> {
 
   showPickerModal() {
     Picker(
-        adapter: PickerDataAdapter<String>(pickerdata: JsonDecoder().convert(PickerData)),
+        adapter: PickerDataAdapter<String>(
+            pickerdata: JsonDecoder().convert(PickerData)),
         changeToFirst: true,
         hideHeader: false,
         selectedTextStyle: TextStyle(color: Colors.blue),
@@ -60,8 +61,9 @@ class _PickerPageState extends State<PickerPage> {
     return Picker(
         height: 300,
         backgroundColor: Colors.transparent,
-        headerDecoration:
-            BoxDecoration(border: Border(bottom: BorderSide(color: Colors.black12, width: 0.5))),
+        headerDecoration: BoxDecoration(
+            border:
+                Border(bottom: BorderSide(color: Colors.black12, width: 0.5))),
         adapter: DateTimePickerAdapter(
           type: PickerDateTimeType.kYMDHM,
           isNumberMonth: false,

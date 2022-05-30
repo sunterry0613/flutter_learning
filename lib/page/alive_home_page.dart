@@ -15,7 +15,8 @@ class AliveHomePage extends StatefulWidget {
   _MyHomePageState createState() => new _MyHomePageState();
 }
 
-class _MyHomePageState extends State<AliveHomePage> with AutomaticKeepAliveClientMixin {
+class _MyHomePageState extends State<AliveHomePage>
+    with AutomaticKeepAliveClientMixin {
   int _counter = 0;
   static const String OFFICIAL_WEBSITE = 'https://www.junohoro.com/';
 

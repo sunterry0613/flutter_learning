@@ -97,7 +97,7 @@ class _LoginPageState extends State<LoginPage> {
                           color: Theme.of(context).iconTheme.color),
                       onPressed: () {
                         //TODO : 第三方登录方法
-                        Scaffold.of(context).showSnackBar(new SnackBar(
+                        ScaffoldMessenger.of(context).showSnackBar(new SnackBar(
                           content: new Text("${item['title']}登录"),
                           action: new SnackBarAction(
                             label: "取消",
@@ -128,7 +128,7 @@ class _LoginPageState extends State<LoginPage> {
         child: RaisedButton(
           child: Text(
             'Login',
-            style: Theme.of(context).primaryTextTheme.headline,
+            style: Theme.of(context).primaryTextTheme.headlineMedium,
           ),
           color: Colors.black,
           onPressed: () {
@@ -170,6 +170,8 @@ class _LoginPageState extends State<LoginPage> {
       validator: (String value) {
         if (value.isEmpty) {
           return '请输入密码';
+        } else {
+          return '';
         }
       },
       decoration: InputDecoration(
@@ -193,13 +195,15 @@ class _LoginPageState extends State<LoginPage> {
   TextFormField buildEmailTextField() {
     return TextFormField(
       decoration: InputDecoration(
-        labelText: 'Emall Address',
+        labelText: 'Email Address',
       ),
       validator: (String value) {
         var emailReg = RegExp(
-            r"[\w!#$%&'*+/=?^_`{|}~-]+(?:\.[\w!#$%&'*+/=?^_`{|}~-]+)*@(?:[\w](?:[\w-]*[\w])?\.)+[\w](?:[\w-]*[\w])?");
+            r"[\w!#$%&'*+/=?^_`{|}~-]+(?:\.[\w!#$%&'*+/=?^_`{|}~-]+)*@(?:\w(?:[\w-]*\w)?\.)+\w(?:[\w-]*\w)?");
         if (!emailReg.hasMatch(value)) {
           return '请输入正确的邮箱地址';
+        } else {
+          return '';
         }
       },
       onSaved: (String value) => _email = value,

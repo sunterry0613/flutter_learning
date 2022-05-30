@@ -16,6 +16,6 @@ class BlocProvider extends InheritedWidget {
   bool updateShouldNotify(_) => true;
 
   static ThemeSelect of(BuildContext context) =>
-      (context.inheritFromWidgetOfExactType(BlocProvider) as BlocProvider)
+      (context.dependOnInheritedWidgetOfExactType<BlocProvider>())
           .themeSelect;
 }

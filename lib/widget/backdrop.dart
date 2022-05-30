@@ -4,7 +4,6 @@
 
 import 'dart:math' as math;
 
-import 'package:flutter/rendering.dart';
 import 'package:flutter/material.dart';
 
 const double _kFrontHeadingHeight = 32.0; // front layer beveled rectangle
@@ -252,7 +251,7 @@ class _BackAppBar extends StatelessWidget {
     return IconTheme.merge(
       data: theme.primaryIconTheme,
       child: new DefaultTextStyle(
-        style: theme.primaryTextTheme.title,
+        style: theme.primaryTextTheme.titleMedium,
         child: new SizedBox(
           height: _kBackAppBarHeight,
           child: new Row(children: children),

@@ -33,10 +33,7 @@ class _ModalPageState extends State<ModalPage> {
       isScrollControlled: true,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(15),
-        side: BorderSide(
-          color: Colors.blue,
-          width: 5
-        ),
+        side: BorderSide(color: Colors.blue, width: 5),
       ),
       builder: (context) => Container(
         height: 400,

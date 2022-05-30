@@ -4,7 +4,6 @@
  *
  */
 
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_app/widget/verification_code.dart';
 
@@ -72,10 +71,10 @@ class TextFieldAndCheckPageState extends State<TextFieldAndCheckPage> {
               color: Colors.black12,
               constraints: BoxConstraints(maxHeight: 30),
               child: TextField(
-               textAlignVertical: TextAlignVertical.bottom,
+                textAlignVertical: TextAlignVertical.bottom,
                 focusNode: secondTextFieldNode,
                 decoration: InputDecoration(
-              //    contentPadding: EdgeInsets.all(0),
+                  //    contentPadding: EdgeInsets.all(0),
                   hintText: '请输入',
                   border: OutlineInputBorder(borderSide: BorderSide.none),
                 ),

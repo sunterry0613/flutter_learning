@@ -3,8 +3,6 @@
    子组件控制自己的状态(按下和抬起的边框高亮)
  */
 
-import 'dart:io';
-
 import 'package:flutter/material.dart';
 
 class StateWidgetPage extends StatefulWidget {

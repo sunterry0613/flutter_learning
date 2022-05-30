@@ -5,11 +5,8 @@
  */
 
 import 'package:flutter/material.dart';
-import 'package:flutter_app/model/AppModel.dart';
 import 'package:flutter_app/rxdart/bloc_provider.dart';
 import 'package:flutter_app/rxdart/theme_select.dart';
-
-import 'package:scoped_model/scoped_model.dart';
 
 class ThemePage extends StatefulWidget {
   @override

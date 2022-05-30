@@ -44,15 +44,18 @@ class _StepperPageState extends State<StepperPage> {
         onStepCancel: stepCancel,
         onStepContinue: stepContinue,
         onStepTapped: stepTapped,
-        controlsBuilder: (BuildContext context,
-            {VoidCallback onStepContinue, VoidCallback onStepCancel}) {
-          return Container(
-            /*width: double.infinity,
-            color: Colors.blue,
-            child: RaisedButton(
-              child: Text('next'),
-              onPressed: onStepContinue,
-            ),*/
+        controlsBuilder: (BuildContext context, ControlsDetails details) {
+          return Row(
+            children: <Widget>[
+              TextButton(
+                onPressed: details.onStepContinue,
+                child: const Text('NEXT'),
+              ),
+              TextButton(
+                onPressed: details.onStepCancel,
+                child: const Text('CANCEL'),
+              ),
+            ],
           );
         },
       )),

@@ -19,6 +19,7 @@ class NodeWidget extends StatefulWidget {
 class _NodeWidgetState extends State<NodeWidget> {
   bool showList = false;
   Node node;
+
   @override
   Widget build(BuildContext context) {
     var me = InkWell(

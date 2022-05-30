@@ -1,6 +1,7 @@
-import 'package:flutter/material.dart';
-import 'dart:math' as math;
 import 'dart:async';
+import 'dart:math' as math;
+
+import 'package:flutter/material.dart';
 
 class Transform3D extends StatelessWidget {
   final digits = [
@@ -26,21 +27,21 @@ class Transform3D extends StatelessWidget {
       body: new Center(
         child: FlipPanel.builder(
           itemBuilder: (context, index) => Container(
-                alignment: Alignment.center,
-                width: 96.0,
-                height: 128.0,
-                decoration: BoxDecoration(
-                  color: Colors.black,
-                  borderRadius: BorderRadius.all(Radius.circular(4.0)),
-                ),
-                child: Text(
-                  '${digits[index]}',
-                  style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 80.0,
-                      color: Colors.yellow),
-                ),
-              ),
+            alignment: Alignment.center,
+            width: 96.0,
+            height: 128.0,
+            decoration: BoxDecoration(
+              color: Colors.black,
+              borderRadius: BorderRadius.all(Radius.circular(4.0)),
+            ),
+            child: Text(
+              '${digits[index]}',
+              style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 80.0,
+                  color: Colors.yellow),
+            ),
+          ),
           itemsCount: digits.length,
           period: Duration(milliseconds: 1000),
           loop: -1,

@@ -17,7 +17,6 @@ class DraggableDragtargets extends StatefulWidget {
 
 class DraggableDragtargetsState extends State<DraggableDragtargets>
     with TickerProviderStateMixin {
-
   bool accept = true;
   bool accept2 = false;
 

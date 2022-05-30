@@ -84,7 +84,7 @@ class _MapSearchPageState extends State<MapSearchPage> {
   Future<void> baiduSearch() async {
     String baiduBaseUrl = 'http://api.map.baidu.com/place_abroad/v1/search';
 
-    var response = await HttpUtil().get(baiduBaseUrl, data: {
+    await HttpUtil().get(baiduBaseUrl, data: {
       'ak': 'o7BxXRdG5GEZ8qbA03GGvA1Xix7UcG0P',
       'output': 'json',
       'region': '全国',

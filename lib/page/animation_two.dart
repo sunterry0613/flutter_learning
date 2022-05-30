@@ -13,7 +13,8 @@ class AnimationTwo extends StatefulWidget {
   _AnimationTwoState createState() => _AnimationTwoState();
 }
 
-class _AnimationTwoState extends State<AnimationTwo> with TickerProviderStateMixin {
+class _AnimationTwoState extends State<AnimationTwo>
+    with TickerProviderStateMixin {
   AnimationController _animationController;
   AnimationController _rotateController;
   Animation<num> animation;
@@ -23,9 +24,11 @@ class _AnimationTwoState extends State<AnimationTwo> with TickerProviderStateMix
   @override
   void initState() {
     super.initState();
-    _animationController = AnimationController(vsync: this, duration: Duration(seconds: 2));
+    _animationController =
+        AnimationController(vsync: this, duration: Duration(seconds: 2));
 
-    _rotateController = AnimationController(vsync: this, duration: Duration(seconds: 12));
+    _rotateController =
+        AnimationController(vsync: this, duration: Duration(seconds: 12));
 
     animation = Tween(begin: 0.0, end: 2 * pi).animate(_rotateController);
   }
@@ -130,7 +133,8 @@ class _AnimationTwoState extends State<AnimationTwo> with TickerProviderStateMix
 class ConstellationAnimationWidget extends AnimatedWidget {
   final double alreadyChoose;
 
-  ConstellationAnimationWidget({Key key, Animation animation, this.alreadyChoose})
+  ConstellationAnimationWidget(
+      {Key key, Animation animation, this.alreadyChoose})
       : super(key: key, listenable: animation);
 
   @override
@@ -156,23 +160,8 @@ class ConstellationAnimationWidget extends AnimatedWidget {
 
 class StaggerAnimation extends StatelessWidget {
   final AnimationController controller;
-  Animation<double> height;
-  Animation<EdgeInsets> padding;
-  Animation<Color> color;
 
-  StaggerAnimation({this.controller, Key key}) : super(key: key) {
-    //高度动画
-    height = Tween(begin: 0.0, end: 300.0).animate(
-        CurvedAnimation(parent: controller, curve: Interval(0.0, 0.6, curve: Curves.ease)));
-
-    //颜色
-    color = ColorTween(begin: Colors.red, end: Colors.green).animate(
-        CurvedAnimation(parent: controller, curve: Interval(0.0, 0.6, curve: Curves.ease)));
-
-    //左侧间距
-    padding = Tween(begin: EdgeInsets.only(left: 0.0), end: EdgeInsets.only(left: 300)).animate(
-        CurvedAnimation(parent: controller, curve: Interval(0.6, 1.0, curve: Curves.ease)));
-  }
+  StaggerAnimation({this.controller, Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -183,14 +172,29 @@ class StaggerAnimation extends StatelessWidget {
   }
 
   Widget _buildAni(BuildContext context, Widget child) {
+    //高度动画
+    Animation<double> _height = Tween(begin: 0.0, end: 300.0).animate(CurvedAnimation(
+        parent: controller, curve: Interval(0.0, 0.6, curve: Curves.ease)));
+
+    //颜色
+    Animation<Color> _color = ColorTween(begin: Colors.red, end: Colors.green).animate(
+        CurvedAnimation(
+            parent: controller, curve: Interval(0.0, 0.6, curve: Curves.ease)));
+
+    //左侧间距
+    Animation<EdgeInsets> _padding = Tween(
+        begin: EdgeInsets.only(left: 0.0), end: EdgeInsets.only(left: 300))
+        .animate(CurvedAnimation(
+        parent: controller, curve: Interval(0.6, 1.0, curve: Curves.ease)));
+
     return Container(
       alignment: Alignment.bottomLeft,
       child: Container(
-        color: color.value,
+        color: _color.value,
         width: 50.0,
-        height: height.value,
+        height: _height.value,
       ),
-      padding: padding.value,
+      padding: _padding.value,
     );
   }
 }

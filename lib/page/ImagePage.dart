@@ -1,6 +1,7 @@
 import 'dart:async';
-import 'package:flutter/material.dart';
+
 import 'package:dio/dio.dart';
+import 'package:flutter/material.dart';
 
 class ImagePage extends StatefulWidget {
   @override
@@ -54,14 +55,17 @@ class ImageState extends State<ImagePage> {
               });
             },
           ),
-          RaisedButton(
+          ElevatedButton(
             onPressed: _getData,
             child: Text(
               'getdata',
               style: TextStyle(color: Colors.white),
             ),
-            color: Colors.green,
-          ),
+            style: ButtonStyle(
+              textStyle: MaterialStateProperty.all(
+                  TextStyle(fontSize: 18, color: Colors.green)),
+            ),
+          )
         ],
       ),
     );

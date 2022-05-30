@@ -87,7 +87,8 @@ class _RepaintBoundaryPageState extends State<RepaintBoundaryPage> {
   }
 
   Future<void> _screenShot() async {
-    RenderRepaintBoundary boundary = _globalKey.currentContext.findRenderObject();
+    RenderRepaintBoundary boundary =
+        _globalKey.currentContext.findRenderObject();
     ui.Image image = await boundary.toImage();
     ByteData byteData = await image.toByteData(format: ImageByteFormat.png);
     Uint8List pngBytes = byteData.buffer.asUint8List();

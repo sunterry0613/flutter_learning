@@ -23,7 +23,10 @@ class _CustomScrollViewPageState extends State<CustomScrollViewPage>
         body: CustomScrollView(
           slivers: <Widget>[
             SliverToBoxAdapter(
-              child: Container(color: Colors.green, height: 100, child: Text('我的可滚动列表上面的一些文')),
+              child: Container(
+                  color: Colors.green,
+                  height: 100,
+                  child: Text('我的可滚动列表上面的一些文')),
             ),
             SliverAppBar(
               //标题居中
@@ -38,10 +41,7 @@ class _CustomScrollViewPageState extends State<CustomScrollViewPage>
                 centerTitle: true,
                 title: Container(
                   child: Column(
-                    children: <Widget>[
-
-                      Text('我是一个FlexibleSpaceBar')
-                    ],
+                    children: <Widget>[Text('我是一个FlexibleSpaceBar')],
                   ),
                 ),
                 background: Image.network(
@@ -66,10 +66,13 @@ class _CustomScrollViewPageState extends State<CustomScrollViewPage>
             SliverToBoxAdapter(
               child: Text('我的可滚动列表上面的一些文'),
             ),
-            SliverList(delegate: SliverChildBuilderDelegate(itemBuilder, childCount: 10)),
+            SliverList(
+                delegate:
+                    SliverChildBuilderDelegate(itemBuilder, childCount: 10)),
             SliverFixedExtentList(
               itemExtent: 50.0,
-              delegate: SliverChildBuilderDelegate((BuildContext context, int index) {
+              delegate:
+                  SliverChildBuilderDelegate((BuildContext context, int index) {
                 return Container(
                   alignment: Alignment.center,
                   color: Colors.lightBlue[100 * (index % 9)],
@@ -97,7 +100,8 @@ class StickyTabBarDelegate extends SliverPersistentHeaderDelegate {
   StickyTabBarDelegate({@required this.child});
 
   @override
-  Widget build(BuildContext context, double shrinkOffset, bool overlapsContent) {
+  Widget build(
+      BuildContext context, double shrinkOffset, bool overlapsContent) {
     return Container(
       color: Theme.of(context).backgroundColor,
       child: this.child,
